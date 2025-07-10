@@ -34,7 +34,7 @@ For each Approved Solution:
     For each Connector:
         Store DisplayName and InternalID into approvedConnectorList[]
 
-![Manual Trigger and List Rows](images/manually%20trigger%20and%20list%20rows.jpeg)
+![Manual Trigger and List Rows](manually%20trigger%20and%20list%20rows.jpeg)
 
 // 📥 Step 2: Fetch Existing DLP Policy
 Get DLP Policies using 'GET DLP Policies v2'
