@@ -33,6 +33,7 @@ For each Approved Solution:
     Get Related Connectors (Many-to-Many Relationship)
     For each Connector:
         Store DisplayName and InternalID into approvedConnectorList[]
+
 ![Manual Trigger and List Rows](images/manually%20trigger%20and%20list%20rows.jpeg)
 
 // 📥 Step 2: Fetch Existing DLP Policy
@@ -42,6 +43,7 @@ Fetch Policy Details:
     BusinessGroupConnectors[]
     ConfidentialGroupConnectors[]
     BlockedGroupConnectors[]
+
 ![Get DLP Policy](images/Get%20DLP%20Policy.jpeg)
 
 // 🔄 Step 3: Clean & Merge Data
@@ -60,6 +62,7 @@ Create JSON Payload:
   { "classification": "Confidential", "connectors": ConfidentialGroupConnectors[] },
   { "classification": "Blocked", "connectors": BlockedGroupConnectors[] }
 ]
+
 ![Connector Groups](images/connector%20groups.jpeg)
 
 // 🔀 Step 5: Update or Handle Errors
@@ -71,6 +74,7 @@ Catch Error:
      -failed reason
      -DLP policy name
      -approved connectors list
+
 ![Update DLP Policy](images/update%20DLP%20policy.jpeg)
 
 // ✅ Step 6: End
