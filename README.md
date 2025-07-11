@@ -33,7 +33,7 @@ For each Approved Solution:
     For each Connector:
         Store DisplayName and InternalID into approvedConnectorList[]
 
-![Manual Trigger and List Rows](manual-trigger-list-rows.jpeg)
+![Manual Trigger and List Rows](https://github.com/vasavisuggala/power-platform-dlp-automation/blob/images/manual-trigger-list-rows.jpeg)
 
 // 📥 Step 2: Fetch Existing DLP Policy
 Get DLP Policies using 'GET DLP Policies v2'
@@ -43,7 +43,7 @@ Fetch Policy Details:
     ConfidentialGroupConnectors[]
     BlockedGroupConnectors[]
 
-![Get DLP Policy](images/Get-DLP-Policy.jpeg)
+![Get DLP Policy](https://github.com/vasavisuggala/power-platform-dlp-automation/blob/images/Get-DLP-Policy.jpeg)
 
 // 🔄 Step 3: Clean & Merge Data
 For each connector in approvedConnectorList[]:
@@ -62,7 +62,7 @@ Create JSON Payload:
   { "classification": "Blocked", "connectors": BlockedGroupConnectors[] }
 ]
 
-![Connector Groups](images/connector-groups.jpeg)
+![Connector Groups](https://github.com/vasavisuggala/power-platform-dlp-automation/blob/images/connector-groups.jpeg)
 
 // 🔀 Step 5: Update or Handle Errors
 Try:
@@ -74,7 +74,7 @@ Catch Error:
      -DLP policy name
      -approved connectors list
 
-![Update DLP Policy](images/Update-DLP-policy.jpeg)
+![Update DLP Policy](https://github.com/vasavisuggala/power-platform-dlp-automation/blob/images/Update-DLP-policy.jpeg)
 
 // ✅ Step 6: End
 Return Success/Failure Notification
