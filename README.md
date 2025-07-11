@@ -9,7 +9,6 @@ This means:
 - ⚠️ If we call it blindly, existing settings could get **overwritten**.  
 - ✅ So, I designed a solution to **fetch the current policy**, merge new approved connectors, and safely update it.  
 
-
 ## 🎯 Goal of the Automation  
 
 ✅ Automatically add all **approved connectors** to the **Business group** in an existing DLP policy.  
@@ -22,7 +21,7 @@ This means:
 
 ## 🛠️ Step-by-Step Process  
 
-```pseudo
+`pseudo
 // 🚀 Start
 Trigger: Manual (for testing purposes)
 
@@ -89,12 +88,11 @@ If you skip this step and directly use Update DLP Policy:
 
 ---
 
-🌟 Result  
+## 🌟 Result  
 
 ✔️ DLP Policies updated dynamically.  
 ✔️ Existing settings fully preserved.  
 ✔️ No manual intervention needed.  
-
 
 
 📢 **Pro Tip for Developers:**  
