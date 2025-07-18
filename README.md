@@ -1,4 +1,11 @@
+
 🚀 Automating DLP Policy Updates in Power Platform: A Developer’s Guide
+
+![Power Automate](https://img.shields.io/badge/Built%20With-Power%20Automate-0078D7?logo=microsoftpowerautomate&logoColor=white)
+![Power Platform](https://img.shields.io/badge/Platform-Microsoft%20Power%20Platform-purple?logo=microsoftpowerapps&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Automation Tool](https://img.shields.io/badge/Tool-Type%3A%20Automation-blue)
+
 
 🔐 **The Challenge**  
 In large Power Platform environments, keeping Data Loss Prevention (DLP) policies updated with approved connectors is critical for governance.  
@@ -21,11 +28,11 @@ This means:
 
 ## 🛠️ Step-by-Step Process  
 
-`pseudo
-// 🚀 Start
+# 🚀 Start
 Trigger: Manual (for testing purposes)
 
-// 📥 Step 1: Fetch Approved Connectors
+# 📥 Step 1: Fetch Approved Connectors
+
 Initialize Array approvedConnectorList[]
 List Rows from Dataverse (Business Team Solution table)
 For each Approved Solution:
@@ -35,7 +42,8 @@ For each Approved Solution:
 
 ![Manual Trigger and List Rows](https://github.com/vasavisuggala/power-platform-dlp-automation/blob/images/manual-trigger-list-rows.jpeg)
 
-// 📥 Step 2: Fetch Existing DLP Policy
+# 📥 Step 2: Fetch Existing DLP Policy
+  
 Get DLP Policies using 'GET DLP Policies v2'
 Filter TargetPolicyName
 Fetch Policy Details:
@@ -45,7 +53,8 @@ Fetch Policy Details:
 
 ![Get DLP Policy](https://github.com/vasavisuggala/power-platform-dlp-automation/blob/images/Get-DLP-Policy.jpeg)
 
-// 🔄 Step 3: Clean & Merge Data
+# 🔄 Step 3: Clean & Merge Data
+  
 For each connector in approvedConnectorList[]:
     IF connector exists in BlockedGroupConnectors[]:
         Remove it from BlockedGroupConnectors[]
@@ -54,7 +63,8 @@ For each connector in approvedConnectorList[]:
 Merge approvedConnectorList[] with BusinessGroupConnectors[]
 Remove duplicates to create FinalBusinessGroupConnectors[]
 
-// 🛠 Step 4: Prepare JSON Payload
+# 🛠 Step 4: Prepare JSON Payload
+  
 Create JSON Payload:
 [
   { "classification": "Business", "connectors": FinalBusinessGroupConnectors[] },
@@ -64,7 +74,8 @@ Create JSON Payload:
 
 ![Connector Groups](https://github.com/vasavisuggala/power-platform-dlp-automation/blob/images/connector-groups.jpeg)
 
-// 🔀 Step 5: Update or Handle Errors
+# 🔀 Step 5: Update or Handle Errors
+  
 Try:
    Call 'Update DLP Policy v2' with Prepared JSON
     Add Record in Audit Log Table
@@ -76,7 +87,8 @@ Catch Error:
 
 ![Update DLP Policy](https://github.com/vasavisuggala/power-platform-dlp-automation/blob/images/Update-DLP-policy.jpeg)
 
-// ✅ Step 6: End
+# ✅ Step 6: End
+  
 Return Success/Failure Notification
 
 ---
@@ -98,8 +110,12 @@ If you skip this step and directly use Update DLP Policy:
 
 
 📢 **Pro Tip for Developers:**  
-Always fetch and merge existing data before calling APIs that overwrite configurations.  
+Always fetch and merge existing data before calling APIs that overwrite configurations. 
+
+👩‍💻 Author ✍️Developed with ❤️ by *Vasavi Suggala*
 
 💬 **Have you automated your DLP updates yet? What governance workflows are you thinking to streamline?**  
+
+🌟 Like this Script? If you found this script useful, please ⭐ star this repository to support future updates and help others discover it.
 
 #PowerPlatform #PowerAutomate #Governance #DLP #Automation
